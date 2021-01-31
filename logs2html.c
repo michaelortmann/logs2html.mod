@@ -89,9 +89,6 @@ static void logs2html_hook_rehash(void);
 static void logs2html_hook_pre_rehash(void);
 static void event_addlogs2htmlchan(void);
 
-#ifndef _strlcpy
-#include "strlcpy.c"
-#endif
 #include "fileoperations.c"
 #include "htmloperations.c"
 #include "tcllogs2html.c"

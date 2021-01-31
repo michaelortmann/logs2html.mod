@@ -41,6 +41,5 @@ distclean: clean
  ../../../src/compat/explicit_bzero.h ../../../src/compat/strlcpy.h \
  ../../../src/mod/modvals.h ../../../src/tandem.h \
  .././logs2html.mod/logs2html.h ../../../src/lang.h \
- .././logs2html.mod/language.h .././logs2html.mod/strlcpy.c \
- .././logs2html.mod/fileoperations.c .././logs2html.mod/htmloperations.c \
- .././logs2html.mod/tcllogs2html.c
+ .././logs2html.mod/language.h .././logs2html.mod/fileoperations.c \
+ .././logs2html.mod/htmloperations.c .././logs2html.mod/tcllogs2html.c
