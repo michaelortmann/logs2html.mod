@@ -1,0 +1,38 @@
+# logs2html.danish.lang
+# language messages for the logs2html module
+
+# Year
+0xe000,år
+
+# Back to mainpage link
+0xe001,Hjem
+
+# Up link
+0xe002,top
+
+# Backward, forward link
+0xe003,forrige
+0xe004,næste
+
+# Month names
+0xe005,Januar
+0xe006,Februar
+0xe007,Marts
+0xe008,April
+0xe009,Må
+0xe010,Juni
+0xe011,Juli
+0xe012,August
+0xe013,September
+0xe014,Oktober
+0xe015,November
+0xe016,December
+
+# Days of week names
+0xe017,Søn.
+0xe018,Man.
+0xe019,Tir.
+0xe020,Ons.
+0xe021,Tor.
+0xe022,Fre.
+0xe023,Lør.

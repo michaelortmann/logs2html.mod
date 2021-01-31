@@ -1,0 +1,3 @@
+DESC:This module converts the log files of your eggdrop 
+DESC:to the html format. It also creates a page-calendar 
+DESC:with links to that created files.

@@ -1,0 +1,37 @@
+%{help=convertalllogs}%{+n}
+###  %bconvertalllogs%b
+   Reconverts all your logs.
+
+See also: convertlogs, makemainpage
+%{help=convertlogs}%{+n}
+###  %bconvertlogs [year [month [day]]]%b
+   %byear%b the year to reconvert logs
+   %bmonth%b the month to reconvert logs
+   %bmonth%b the day to reconvert logs
+   If year equals %ball%b the command reconverts all your logs (same as %b.convertalllogs%b).
+   If you do not specify a parameter, the command will convert the logs for the current day.
+   
+See also: convertalllogs, makemainpage
+%{help=makemainpage}%{+n}
+###  %bmakemainpage%b
+   Redraws your mainpages. (same as %b.makeindexpage%b)
+
+See also: makeindexpage
+%{help=makeindexpage}%{+n}
+###  %bmakeindexpage%b
+   Redraws your mainpages. (same as %b.makemainpage%b)
+
+See also: makemainpage
+%{help=logs2html module}%{+n}
+###  %blogs2html module%b
+   This module convert all log files of your eggdrop in html format.
+
+   The following commands are provided by the logs2html module:
+%{+n}
+     %bconvertalllogs       makemainpage%b
+     %bconvertlogs          makeindexpage%b
+%{help=all}%{+n}
+###  %blogs2html module%b commands
+%{+n}
+     %bconvertalllogs       makemainpage%b
+     %bconvertlogs          makeindexpage%b

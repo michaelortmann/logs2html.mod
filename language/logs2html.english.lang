@@ -1,0 +1,38 @@
+# logs2html.english.lang
+# language messages for the logs2html module
+
+# Year
+0xe000,year
+
+# Back to mainpage link
+0xe001,Main page
+
+# Up link
+0xe002,up
+
+# Backward, forward link
+0xe003,back
+0xe004,next
+
+# Month names
+0xe005,January
+0xe006,February
+0xe007,March
+0xe008,April
+0xe009,May
+0xe010,June
+0xe011,July
+0xe012,August
+0xe013,September
+0xe014,October
+0xe015,November
+0xe016,December
+
+# Days of week names
+0xe017,Su
+0xe018,Mo
+0xe019,Tu
+0xe020,Wn
+0xe021,Th
+0xe022,Fr
+0xe023,St
