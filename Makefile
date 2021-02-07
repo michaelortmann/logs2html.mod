@@ -35,11 +35,8 @@ distclean: clean
  ../../../src/lang.h ../../../src/eggdrop.h ../../../src/compat/in6.h \
  ../../../src/flags.h ../../../src/cmdt.h ../../../src/tclegg.h \
  ../../../src/tclhash.h ../../../src/chan.h ../../../src/users.h \
- ../../../src/compat/compat.h ../../../src/compat/base64.h \
- ../../../src/compat/inet_aton.h ../../../src/compat/snprintf.h \
- ../../../src/compat/gethostbyname2.h \
- ../../../src/compat/explicit_bzero.h ../../../src/compat/strlcpy.h \
- ../../../src/mod/modvals.h ../../../src/tandem.h \
- .././logs2html.mod/logs2html.h ../../../src/lang.h \
+ ../../../src/compat/compat.h ../../../src/compat/snprintf.h \
+ ../../../src/compat/strlcpy.h ../../../src/mod/modvals.h \
+ ../../../src/tandem.h .././logs2html.mod/logs2html.h ../../../src/lang.h \
  .././logs2html.mod/language.h .././logs2html.mod/fileoperations.c \
  .././logs2html.mod/htmloperations.c .././logs2html.mod/tcllogs2html.c
