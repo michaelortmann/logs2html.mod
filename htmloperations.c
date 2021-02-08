@@ -33,7 +33,7 @@
 * Output:
 *   
 *
-* Discription:
+* Description:
 *   
 *   
 */

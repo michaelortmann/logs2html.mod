@@ -46,7 +46,7 @@ Version history:
 
 12.05.09 - version 2.4.2
   - fixed error with compilation on eggdrop 1.6.19 with Suzi-patch sp.0009
-  - now automaticly reconvert logs for previous year, when the year changed (i.e. on december, 31)
+  - now automatically reconvert logs for previous year, when the year changed (i.e. on december, 31)
 
 
 08.05.09 - version 2.4.1
@@ -79,7 +79,7 @@ Version history:
 
 
  24.07.05 - version 2.3.0
-  - page style discriptions moved to CSS file
+  - page style descriptions moved to CSS file
   - no need for tcl now
   - small bugs fixed
 
