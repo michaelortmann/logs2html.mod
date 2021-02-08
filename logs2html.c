@@ -1648,10 +1648,10 @@ char *logs2html_start(Function *global_funcs)
 	/* Register the module. */
 	module_register(MODULE_NAME, logs2html_table, MODULE_MAJOR, MODULE_MINOR);
 
-	if (!module_depend(MODULE_NAME, "eggdrop", 108, 0)) {
-		module_undepend(MODULE_NAME);
-		return "This module requires Eggdrop 1.8.0 or later.";
-	}
+  if (!module_depend(MODULE_NAME, "eggdrop", 108, 4)) {
+        module_undepend(MODULE_NAME);
+        return "This module requires Eggdrop 1.8.4 or later.";
+  }
 
 	add_tcl_ints(my_tcl_ints);
 	add_tcl_strings(my_tcl_strings);
