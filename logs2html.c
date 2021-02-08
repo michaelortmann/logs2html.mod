@@ -1014,12 +1014,10 @@ static void strip_codes(char *buf_ptr_copy, l2hnode_t **string_tree) {
 						// if uri look like 'ftp.eggheads.org' we add 'ftp://' protocol, else let it be 'http://'
 						if (strncmp(dd + pmatch_uri.rm_so, "ftp.", 4) == 0) {
 							newnode->node_data = nmalloc(strlen("ftp://") + pmatch_uri.rm_eo - pmatch_uri.rm_so + 1);
-							newnode->node_data[0] = '\0';
-							strncat(newnode->node_data, "ftp://", strlen("ftp://"));
+							strcpy(newnode->node_data, "ftp://");
 						} else {
 							newnode->node_data = nmalloc(strlen("http://") + pmatch_uri.rm_eo - pmatch_uri.rm_so + 1);
-							newnode->node_data[0] = '\0';
-							strncat(newnode->node_data, "http://", strlen("http://"));
+							strcpy(newnode->node_data, "http://");
 						}
 					}
 					strncat(newnode->node_data, dd + pmatch_uri.rm_so, pmatch_uri.rm_eo - pmatch_uri.rm_so);
