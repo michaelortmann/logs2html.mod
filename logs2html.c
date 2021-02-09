@@ -6,8 +6,6 @@
  * 2004-2009 year
  *
  * Patch and some changes to v.2.3.4 by skiidoo (2007)
- *
- * Updated by pseudo to work on eggdrop 1.8.0 and Tcl 8.6 (Sep 2010)
  */
 /*
  * This program is free software; you can redistribute it and/or
@@ -45,9 +43,9 @@
 #undef global
 
 #define MODULE_MAJOR 2
-#define MODULE_MINOR 4
-#define MODULE_SUBMINOR 3
-#define MODULE_BUILD "-1f7c9d8 (unofficial)"
+#define MODULE_MINOR 5
+#define MODULE_SUBMINOR 0
+#define MODULE_BUILD "0"
 
 static Function *global = NULL;
 

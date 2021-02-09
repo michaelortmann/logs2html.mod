@@ -1,0 +1,51 @@
+2.5 09.02.21
+- Now also works with eggdrop 1.8.4. (Michael Ortmann)
+2.4.3.1 12.05.15
+- NO major updates at all, sorry.
+- added Turkish Language file by Ufuk CINGAY as it has been reported before
+- some bugfixes thanks to Andrey S. Danin
+  (http://sourceforge.net/u/stuwdrey/profile/)
+2.4.3-pseudo 25.09.10
+- Modified to run on eggdrop 1.8.x (pseudo)
+- removed direct access of interp->result to fix compatibility with Tcl 8.6
+2.4.3 28.05.09
+- now correctly output '"' and '&' char to html
+- improved search of uri and email
+- added css classes for join/left, mode change, nick change and kick events
+- added an option to not display these events in the resulting html file
+2.4.2 12.05.09
+- fixed error with compilation on eggdrop 1.6.19 with Suzi-patch sp.0009
+- now automatically reconvert logs for previous year, when the year changed
+  (i.e. on december, 31)
+2.4.1 08.05.09
+- fixed display bug with firefox browser
+2.4.0 24.04.09
+- now module can convert and show logs for several years (new command added, see
+  '.help logs2html module')
+- the output pages is now in xhtml format (see "known problems" for details)
+- added dont-print-time parameter
+- added month-block-orientation parameter
+- some color-names fixed in default css file
+2.3.4 15.10.05
+- added setting in config file, which allow to change value of meta tag
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=..."> in generated
+  HTML files.
+2.3.3 04.10.05
+- fixed bug with broken e-mail (strings with broken e-mails were truncated)
+2.3.2 24.09.05
+- added support for <B> and <U> tags
+- fixed bug with [%H:%M:%S] timestamp (I hope.. :-))
+2.3.1 26.07.05
+- bug fixed
+2.3.0 24.07.05
+- page style descriptions moved to CSS file
+- no need for tcl now
+- small bugs fixed
+2.1.0 25.04.05
+- added support for http links and e-mail.
+2.0 27.02.05
+- converting logs for multiply channels
+- possibility to change colors of HTML pages
+- now you can aim number of lines on the one generated HTML page
+1.0 16.12.04
+- initial release
