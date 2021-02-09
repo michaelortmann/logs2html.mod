@@ -1119,28 +1119,28 @@ static void replace_chars(char *buf_ptr_copy, char **realloc_buf)
 			switch (*buf_ptr_copy) {
 				case 0x3c:		/* < */
 					{
-						strncat(dd, "&lt;", strlen("&lt;"));
+						strcat(dd, "&lt;");
 						buf_ptr_copy++; dd += strlen("&lt;");
 						continue;
 					}
 					break;
 				case 0x3e:		/* > */
 					{
-						strncat(dd, "&gt;", strlen("&gt;"));
+						strcat(dd, "&gt;");
 						buf_ptr_copy++; dd += strlen("&gt;");
 						continue;
 					}
 					break;
 				case 0x22:		/* " */
 					{
-						strncat(dd, "&quot;", strlen("&quot;"));
+						strcat(dd, "&quot;");
 						buf_ptr_copy++; dd += strlen("&quot;");
 						continue;
 					}
 					break;
 				case 0x26:		/* & */
 					{
-						strncat(dd, "&amp;", strlen("&amp;"));
+						strcat(dd, "&amp;");
 						buf_ptr_copy++; dd += strlen("&amp;");
 						continue;
 					}
