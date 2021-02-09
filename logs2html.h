@@ -45,13 +45,13 @@
 
 typedef struct l2hchan_struct {
 	struct l2hchan_struct *next;
-	char *channame;			/* Имя канала для которого конвертировать логи */
-	char *inputpath;		/* Имя (префикс) данного канала (вычисляется из выражения logfile в конфиге бота) */
-	char *outputpath;		/* Куда выводить конвертированные логи */
-	char *mainpagename;		/* Имя главной страницы */
-	char *mainpagetitle;	/* Заголовок на главной странице */
-	char *logspagename;		/* Имя (префикс) страницы переконвертированного логфайла */
-	char *logspagetitle;	/* Заголовок страницы логфайла */
+	char *channame;			/* РРјСЏ РєР°РЅР°Р»Р° РґР»СЏ РєРѕС‚РѕСЂРѕРіРѕ РєРѕРЅРІРµСЂС‚РёСЂРѕРІР°С‚СЊ Р»РѕРіРё */
+	char *inputpath;		/* РРјСЏ (РїСЂРµС„РёРєСЃ) РґР°РЅРЅРѕРіРѕ РєР°РЅР°Р»Р° (РІС‹С‡РёСЃР»СЏРµС‚СЃСЏ РёР· РІС‹СЂР°Р¶РµРЅРёСЏ logfile РІ РєРѕРЅС„РёРіРµ Р±РѕС‚Р°) */
+	char *outputpath;		/* РљСѓРґР° РІС‹РІРѕРґРёС‚СЊ РєРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅРЅС‹Рµ Р»РѕРіРё */
+	char *mainpagename;		/* РРјСЏ РіР»Р°РІРЅРѕР№ СЃС‚СЂР°РЅРёС†С‹ */
+	char *mainpagetitle;	/* Р—Р°РіРѕР»РѕРІРѕРє РЅР° РіР»Р°РІРЅРѕР№ СЃС‚СЂР°РЅРёС†Рµ */
+	char *logspagename;		/* РРјСЏ (РїСЂРµС„РёРєСЃ) СЃС‚СЂР°РЅРёС†С‹ РїРµСЂРµРєРѕРЅРІРµСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ Р»РѕРіС„Р°Р№Р»Р° */
+	char *logspagetitle;	/* Р—Р°РіРѕР»РѕРІРѕРє СЃС‚СЂР°РЅРёС†С‹ Р»РѕРіС„Р°Р№Р»Р° */
 } l2hchan_t;
 
 typedef enum {NODE_MIRCCOLOR, NODE_FONTSTYLE, NODE_EMAIL, NODE_URI, NODE_SPECIAL} l2h_node;
@@ -60,7 +60,7 @@ typedef struct l2hnode_struct {
 	struct l2hnode_struct *next;
 	l2h_node node_type;
 	int node_so;			// Start of special char
-	char *node_data;		// Class fo mirc colors
+	char *node_data;		// Class for mirc colors
 	bool node_close;
 } l2hnode_t;
 

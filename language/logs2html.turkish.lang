@@ -1,0 +1,38 @@
+# logs2html.turkish.lang
+# language messages for the logs2html module ufukcingay ufukcingay@ttmail.com (19/08/12)
+
+# Year
+0xe000,Yil
+
+# Back to mainpage link
+0xe001,Ana sayfa
+
+# Up link
+0xe002,yukari
+
+# Backward, forward link
+0xe003,geri
+0xe004,ileri
+
+# Month names
+0xe005,Ocak
+0xe006,Subat
+0xe007,Mart
+0xe008,Nisan
+0xe009,Mayis
+0xe010,Haziran
+0xe011,Temmuz
+0xe012,Agustos
+0xe013,Eylul
+0xe014,Ekim
+0xe015,Kasým
+0xe016,Aralýk
+
+# Days of week names
+0xe017,Paz
+0xe018,Pt
+0xe019,Sal
+0xe020,Crs
+0xe021,Prs
+0xe022,Cum
+0xe023,Ct

@@ -63,13 +63,13 @@ static int tcl_addlogs2htmlchan STDVAR
 {
 	BADARGS(7, 7, " channel output-path main-page-name main-page-title logs-page-prefix logs-page-title");
 
-	l2hchan_t *newchan = nmalloc(sizeof(struct l2hchan_struct)); 
+	l2hchan_t *newchan = nmalloc(sizeof(struct l2hchan_struct));
 	if (newchan == NULL) {
 		putlog(LOG_MISC, "*", "Can't allocate enough space to add new channel!");
 	    Tcl_AppendResult(irp, "Can't allocate enough space to add new channel!", NULL);
 		return TCL_ERROR;
 	}
-	
+
 	int len;
 	newchan->next = NULL;
 
@@ -119,7 +119,7 @@ static int tcl_addlogs2htmlchan STDVAR
 		chan->next = newchan;
 	}
 	count++;
-	
+
 	putlog(LOG_MISC, "*", "  logs2html module: added channel '%s'. Total channels added: %d.", newchan->channame, count);
 	Tcl_AppendResult(irp, "Channel added: ", argv[1], ".", NULL);
 
@@ -129,4 +129,4 @@ static int tcl_addlogs2htmlchan STDVAR
 static tcl_cmds my_tcl_cmds[] = {
 	{"addlogs2htmlchan",	tcl_addlogs2htmlchan},
 	{NULL,					NULL}	/* Mark end. */
-}; 
+};

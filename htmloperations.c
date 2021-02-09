@@ -26,12 +26,12 @@
 * function void writecss
 *
 * Input:
-*   
-*   
-*   
+*
+*
+*
 *
 * Output:
-*   
+*
 *
 * Description:
 *   
@@ -74,7 +74,7 @@ static void WriteCSSFile(FILE *dst_file)
 	str_write(dst_file, ".l2hMainPage #container #monthtable .monthblock .dayname {\n");
 	str_write(dst_file, "font-weight:bold;\n");
 	str_write(dst_file, "height: 1.8em;\n");
-	str_write(dst_file, "background: Silver;\n"); 
+	str_write(dst_file, "background: Silver;\n");
 	str_write(dst_file, "text-align: left;\n");
 	str_write(dst_file, "padding: 0 5px;\n");
 	str_write(dst_file, "color:#333333;\n");
@@ -89,14 +89,14 @@ static void WriteCSSFile(FILE *dst_file)
 	str_write(dst_file, "}\n");
 	str_write(dst_file, ".l2hMainPage #container #monthtable .monthblock .emptycell {\n");
 	str_write(dst_file, "height: 1.8em;\n");
-	str_write(dst_file, "background:#DDDDDD;\n"); 
+	str_write(dst_file, "background:#DDDDDD;\n");
 	str_write(dst_file, "text-align: center;\n");
 	str_write(dst_file, "}\n");
 	str_write(dst_file, ".l2hMainPage #container #monthtable .monthblock .day {\n");
 	str_write(dst_file, "font-family:\"Courier New\", Courier, monospace;\n");
 	str_write(dst_file, "font-weight:bold;\n");
 	str_write(dst_file, "height: 1.8em;\n");
-	str_write(dst_file, "background:#FFCC00;\n"); 
+	str_write(dst_file, "background:#FFCC00;\n");
 	str_write(dst_file, "text-align: center;\n");
 	str_write(dst_file, "color:#FF0000;\n");
 	str_write(dst_file, "}\n");

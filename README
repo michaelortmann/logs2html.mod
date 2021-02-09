@@ -1,4 +1,4 @@
-logs2html.mod v.2.4.3 by Alexander Fedotov aka Shmupsik aka shurikvz
+logs2html.mod v.2.4.3.1 by shmupsik aka shurikvz
 e-mail: shurikvz@mail.ru
 
 This module converts the log files of your eggdrop to the html format. It also creates a page-calendar with links to that created files.
@@ -33,6 +33,12 @@ pseudo's updates are available at http://eggdrop.egg6.net/modules/
 
 *******************************************************************************
 Version history:
+
+12.05.15 - version 2.4.3.1
+  - NO major updates at all, sorry.
+  - added Turkish Language file by Ufuk CINGAY as it has been reported before
+  - some bugfixes thanks to Andrey S. Danin (http://sourceforge.net/u/stuwdrey/profile/)
+
 25.09.10 - version 2.4.3-pseudo
   - updated dependencies to eggdrop 1.8.x
   - removed direct access of interp->result to fix compatibility with Tcl 8.6

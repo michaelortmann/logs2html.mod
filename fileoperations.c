@@ -28,15 +28,15 @@
  * function FILE *openfile(char *newfilename, const char *mode, bool silent)
  *
  * Input:
- *   newfilename	-	имя файла, который необходимо создать
- *   mode					-	режим открытия файла
+ *   newfilename	-	РёРјСЏ С„Р°Р№Р»Р°, РєРѕС‚РѕСЂС‹Р№ РЅРµРѕР±С…РѕРґРёРјРѕ СЃРѕР·РґР°С‚СЊ
+ *   mode					-	СЂРµР¶РёРј РѕС‚РєСЂС‹С‚РёСЏ С„Р°Р№Р»Р°
  *
  * Output:
- *   указатель на файл
+ *   СѓРєР°Р·Р°С‚РµР»СЊ РЅР° С„Р°Р№Р»
  *
- * Discription:
- *   функция осуществляет создание и открытие файла в указанном режиме
- *   и возвращает указатель на созданный файл
+ * Description:
+ *   С„СѓРЅРєС†РёСЏ РѕСЃСѓС‰РµСЃС‚РІР»СЏРµС‚ СЃРѕР·РґР°РЅРёРµ Рё РѕС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р° РІ СѓРєР°Р·Р°РЅРЅРѕРј СЂРµР¶РёРјРµ
+ *   Рё РІРѕР·РІСЂР°С‰Р°РµС‚ СѓРєР°Р·Р°С‚РµР»СЊ РЅР° СЃРѕР·РґР°РЅРЅС‹Р№ С„Р°Р№Р»
  */
 static FILE *openfile(char *filename, const char *mode, bool silent) {
 	FILE *file;
@@ -61,16 +61,16 @@ static FILE *openfile(char *filename, const char *mode, bool silent) {
  * function void writefromexfile(FILE *dst_file, char *exfilename)
  *
  * Input:
- *   
- *   
- *   
+ *
+ *
+ *
  *
  * Output:
- *   
  *
- * Discription:
- *   
- *   
+ *
+ * Description:
+ *
+ *
  */
 static void writefromexfile(FILE *dst_file, char *exfilename) {
 	FILE *addfile;
@@ -97,16 +97,16 @@ static void writefromexfile(FILE *dst_file, char *exfilename) {
  * function void str_write(FILE *file, char *fmt, ... )
  *
  * Input:
- *   file -	файл в который пишем данные
- *   fmt -	строка для записи со спецификаторами формата
- *   ... -	данные для записи в строку
+ *   file -	С„Р°Р№Р» РІ РєРѕС‚РѕСЂС‹Р№ РїРёС€РµРј РґР°РЅРЅС‹Рµ
+ *   fmt -	СЃС‚СЂРѕРєР° РґР»СЏ Р·Р°РїРёСЃРё СЃРѕ СЃРїРµС†РёС„РёРєР°С‚РѕСЂР°РјРё С„РѕСЂРјР°С‚Р°
+ *   ... -	РґР°РЅРЅС‹Рµ РґР»СЏ Р·Р°РїРёСЃРё РІ СЃС‚СЂРѕРєСѓ
  *
  * Output:
- *   ничего
+ *   РЅРёС‡РµРіРѕ
  *
- * Discription:
- *   функция осуществляет запись переданной строки в указанный файл,
- *   производя соответствующее ее форматирование
+ * Description:
+ *   С„СѓРЅРєС†РёСЏ РѕСЃСѓС‰РµСЃС‚РІР»СЏРµС‚ Р·Р°РїРёСЃСЊ РїРµСЂРµРґР°РЅРЅРѕР№ СЃС‚СЂРѕРєРё РІ СѓРєР°Р·Р°РЅРЅС‹Р№ С„Р°Р№Р»,
+ *   РїСЂРѕРёР·РІРѕРґСЏ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµРµ РµРµ С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёРµ
  */
 static void str_write(FILE *file, char *fstr, ... ) {
 	va_list ap;
@@ -116,14 +116,14 @@ static void str_write(FILE *file, char *fstr, ... ) {
 
 	buffer = (char *)nmalloc(size);
 
-	va_start(ap, fstr);
 	while (true) {
+		va_start(ap, fstr);
 		nchars = egg_vsnprintf(buffer, size, fstr, ap);
+		va_end(ap);
 		if (nchars < size) break;
 		size *= 2;
 		buffer = (char *)nrealloc(buffer, size);
 	}
-	va_end(ap);
 
 	fwrite(buffer, sizeof(char), strlen(buffer), file);
 	nfree(buffer); buffer = NULL;
