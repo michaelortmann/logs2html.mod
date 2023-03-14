@@ -1,10 +1,17 @@
+2.6 16.03.23
+- Cleanup alloc()
+- egg_strncasecmp() -> strncasecmp()
+- egg_strftime() -> strftime()
+- egg_snprintf() -> snprintf()
+- egg_vsnprintf() -> vsnprintf()
+- Fix URL
 2.5 09.02.21
 - Now also works with eggdrop 1.8.4. (Michael Ortmann)
 2.4.3.1 12.05.15
 - NO major updates at all, sorry.
 - added Turkish Language file by Ufuk CINGAY as it has been reported before
 - some bugfixes thanks to Andrey S. Danin
-  (http://sourceforge.net/u/stuwdrey/profile/)
+  (https://sourceforge.net/u/stuwdrey/profile/)
 2.4.3-pseudo 25.09.10
 - Modified to run on eggdrop 1.8.x (pseudo)
 - removed direct access of interp->result to fix compatibility with Tcl 8.6

@@ -43,7 +43,7 @@
 #undef global
 
 #define MODULE_MAJOR 2
-#define MODULE_MINOR 5
+#define MODULE_MINOR 6
 #define MODULE_SUBMINOR 0
 #define MODULE_BUILD "0"
 
@@ -142,7 +142,7 @@ static void makeindexpage(l2hchan_t *ch, int year) {
 	int filenamelength = strlen(ch->outputpath) + strlen(SEP) + MAX(strlen(ch->mainpagename), strlen(ch->logspagename) + strlen("00") + strlen("00") + strlen("_pg000000")) + strlen("0000") + strlen(".html") + 1;
 	char *filename = nmalloc(filenamelength);
 
-	egg_snprintf(filename, filenamelength, "%s%sdefault.css", ch->outputpath, SEP);
+	snprintf(filename, filenamelength, "%s%sdefault.css", ch->outputpath, SEP);
 	if ((file = openfile(filename, "wb", false)) == NULL) {
 		nfree(filename);
 		return;
@@ -151,9 +151,9 @@ static void makeindexpage(l2hchan_t *ch, int year) {
 	fclose(file);
 
 	if (tblock.tm_year + 1900 == year) {
-		egg_snprintf(filename, filenamelength, "%s%s%s.html", ch->outputpath, SEP, ch->mainpagename);
+		snprintf(filename, filenamelength, "%s%s%s.html", ch->outputpath, SEP, ch->mainpagename);
 	} else {
-		egg_snprintf(filename, filenamelength, "%s%s%s%d.html", ch->outputpath, SEP, ch->mainpagename, year);
+		snprintf(filename, filenamelength, "%s%s%s%d.html", ch->outputpath, SEP, ch->mainpagename, year);
 	}
 	if ((file = openfile(filename, "wb", false)) == NULL) {
 		nfree(filename);
@@ -195,9 +195,9 @@ static void makeindexpage(l2hchan_t *ch, int year) {
 			str_write(file, "<a href=\"JavaScript:void(0);\">%d</a>", loopyear);
 		} else {
 			if (tblock.tm_year + 1900 == loopyear) {
-				egg_snprintf(filename, filenamelength, "%s.html", ch->mainpagename);
+				snprintf(filename, filenamelength, "%s.html", ch->mainpagename);
 			} else {
-				egg_snprintf(filename, filenamelength, "%s%d.html", ch->mainpagename, loopyear);
+				snprintf(filename, filenamelength, "%s%d.html", ch->mainpagename, loopyear);
 			}
 			str_write(file, "<a href=\"%s\">%d</a>", filename, loopyear);
 		}
@@ -244,14 +244,14 @@ static void makeindexpage(l2hchan_t *ch, int year) {
 						for(col = 0; col < 7; col++) {
 							int day = row * 7 + (col + 1) - getdayofweek(year, month + 1, 1);
 							if ((day >= 1) && (day <= DAYS_IN_MONTH(year, month))) {
-								egg_snprintf(filename, filenamelength, "%s%s%s%d%02d%02d_pg%d.html", ch->outputpath, SEP, ch->logspagename, year, month + 1, day, 1);
+								snprintf(filename, filenamelength, "%s%s%s%d%02d%02d_pg%d.html", ch->outputpath, SEP, ch->logspagename, year, month + 1, day, 1);
 								//Lets check if file exist and we can paste link to it. If not exist we try to make it.
 								if (!file_readable(filename)) {
 									convertfile(ch, year, month + 1, day);
 								}
 								if (file_readable(filename)) {
 									/* let write without full path */
-									egg_snprintf(filename, filenamelength, "%s%d%02d%02d_pg%d.html", ch->logspagename, year, month + 1, day, 1);
+									snprintf(filename, filenamelength, "%s%d%02d%02d_pg%d.html", ch->logspagename, year, month + 1, day, 1);
 									str_write(file, "\t\t\t\t\t\t\t\t<td class=\"day\"><a href=\"%s\">%d</a></td>\n", filename, day);
 								} else {
 									str_write(file, "\t\t\t\t\t\t\t\t<td class=\"day\">%d</td>\n", day);
@@ -284,14 +284,14 @@ static void makeindexpage(l2hchan_t *ch, int year) {
 							}
 							int day = (col - 1) * 7 + (row + 1) - getdayofweek(year, month + 1, 1);
 							if ((day >= 1) && (day <= DAYS_IN_MONTH(year, month))) {
-								egg_snprintf(filename, filenamelength, "%s%s%s%d%02d%02d_pg%d.html", ch->outputpath, SEP, ch->logspagename, year, month + 1, day, 1);
+								snprintf(filename, filenamelength, "%s%s%s%d%02d%02d_pg%d.html", ch->outputpath, SEP, ch->logspagename, year, month + 1, day, 1);
 								//Lets check if file exist and we can paste link to it. If not exist we try to make it.
 								if (!file_readable(filename)) {
 									convertfile(ch, year, month + 1, day);
 								}
 								if (file_readable(filename)) {
 									/* let write without full path */
-									egg_snprintf(filename, filenamelength, "%s%d%02d%02d_pg%d.html", ch->logspagename, year, month + 1, day, 1);
+									snprintf(filename, filenamelength, "%s%d%02d%02d_pg%d.html", ch->logspagename, year, month + 1, day, 1);
 									str_write(file, "\t\t\t\t\t\t\t\t<td class=\"day\"><a href=\"%s\">%d</a></td>\n", filename, day);
 								} else {
 									str_write(file, "\t\t\t\t\t\t\t\t<td class=\"day\">%d</td>\n", day);
@@ -369,15 +369,15 @@ static void convertfile(l2hchan_t *ch, int year, int month, int day) {
 	tblock.tm_min	= 0;
 	tblock.tm_sec	= 1;
 	if (!logfile_suffix[0])
-		egg_strftime(ct, 12, ".%d%b%Y", &tblock);
+		strftime(ct, 12, ".%d%b%Y", &tblock);
 	else
-		egg_strftime(ct, 80, logfile_suffix, &tblock);
+		strftime(ct, 80, logfile_suffix, &tblock);
 	ct[80] = '\0';
 
 	// calculate maximum possible filenamelength
 	int	filenamelength = MAX(strlen(ch->outputpath), strlen(ch->inputpath)) + MAX(strlen(SEP) + strlen(ch->logspagename) + strlen("0000") + strlen("00") + strlen("00") + strlen("_pg000000") + strlen(".html"), strlen(ct)) + 1;
 	char *filename = nmalloc(filenamelength);
-	egg_snprintf(filename, filenamelength, "%s%s", ch->inputpath, ct);
+	snprintf(filename, filenamelength, "%s%s", ch->inputpath, ct);
 	if ((src_file = openfile(filename, "r", true)) == NULL) {
 		nfree(filename);
 		return;
@@ -391,7 +391,7 @@ static void convertfile(l2hchan_t *ch, int year, int month, int day) {
 		lines_count = lines_per_page;
 		pages_count++;
 
-		egg_snprintf(filename, filenamelength, "%s%s%s%d%02d%02d_pg%d.html", ch->outputpath, SEP, ch->logspagename, year, month, day, pages_count);
+		snprintf(filename, filenamelength, "%s%s%s%d%02d%02d_pg%d.html", ch->outputpath, SEP, ch->logspagename, year, month, day, pages_count);
 		if ((file = openfile(filename, "wb", false)) == NULL) {
 			fclose(src_file);
 			putlog(LOG_MISC, "*", "logs2html: Error occurred on converting %d page of file \"%s\"!", pages_count, filename);
@@ -450,7 +450,7 @@ static void convertfile(l2hchan_t *ch, int year, int month, int day) {
 			data[0] = '\0';
 			strcat(data, "\t\t\t<div>&nbsp;");
 			if (shtime) {
-				egg_strftime(stamp, sizeof(stamp) - 1, LOG_TS, &tblock); /* Print dummy time */
+				strftime(stamp, sizeof(stamp) - 1, LOG_TS, &tblock); /* Print dummy time */
 				tsl = strlen(stamp);
 				if (dont_print_time == 0) {
 					strcat(data, "<span class=\"time\">");
@@ -607,7 +607,7 @@ static void convertfile(l2hchan_t *ch, int year, int month, int day) {
 	 */
 	int i, j;
 	for (i = 1; i <= pages_count; i++) {
-		egg_snprintf(filename, filenamelength, "%s%s%s%d%02d%02d_pg%d.html", ch->outputpath, SEP, ch->logspagename, year, month, day, i);
+		snprintf(filename, filenamelength, "%s%s%s%d%02d%02d_pg%d.html", ch->outputpath, SEP, ch->logspagename, year, month, day, i);
 		if ((file = openfile(filename, "ab", false)) == NULL) {
 			putlog(LOG_MISC, "*", "logs2html: Error occurred on converting %d page of file \"%s\"!", i, filename);
 			nfree(filename);
@@ -620,19 +620,19 @@ static void convertfile(l2hchan_t *ch, int year, int month, int day) {
 			if (i == 1)	{
 				str_write(file, LOGS2HTML_BACK);
 			} else {
-				egg_snprintf(filename, filenamelength, "%s%d%02d%02d_pg%d.html", ch->logspagename, year, month, day, i-1);
+				snprintf(filename, filenamelength, "%s%d%02d%02d_pg%d.html", ch->logspagename, year, month, day, i-1);
 				str_write(file, "<span>&larr;</span>&nbsp;<a href=\"%s\">%s</a>", filename, LOGS2HTML_BACK);
 			}
 			str_write(file, "&nbsp;");
 			if (i == pages_count)	{
 				str_write(file, LOGS2HTML_NEXT);
 			} else {
-				egg_snprintf(filename, filenamelength, "%s%d%02d%02d_pg%d.html", ch->logspagename, year, month, day, i+1);
+				snprintf(filename, filenamelength, "%s%d%02d%02d_pg%d.html", ch->logspagename, year, month, day, i+1);
 				str_write(file, "<a href=\"%s\">%s</a>&nbsp;<span>&rarr;</span>", filename, LOGS2HTML_NEXT);
 			}
 			str_write(file, "<br />");
 			for (j = 1; j <= pages_count; j++) {
-				egg_snprintf(filename, filenamelength, "%s%d%02d%02d_pg%d.html", ch->logspagename, year, month, day, j);
+				snprintf(filename, filenamelength, "%s%d%02d%02d_pg%d.html", ch->logspagename, year, month, day, j);
 				if (j != i)	{
 					str_write(file, "<span><a href=\"%s\">%d</a></span>", filename, j);
 				} else {
@@ -779,10 +779,10 @@ static void strip_codes(char *buf_ptr_copy, l2hnode_t **string_tree) {
 									newnode->node_close	= t_0x03_opened;
 									if (strlen(bg_color) > 0) {
 										newnode->node_data = nmalloc(6);
-										egg_snprintf(newnode->node_data, 6, "c%02.2d%02.2d", atoi(fg_color), atoi(bg_color));
+										snprintf(newnode->node_data, 6, "c%02.2d%02.2d", atoi(fg_color), atoi(bg_color));
 									} else {
 										newnode->node_data = nmalloc(4);
-										egg_snprintf(newnode->node_data, 4, "f%02.2d", atoi(fg_color));
+										snprintf(newnode->node_data, 4, "f%02.2d", atoi(fg_color));
 									}
 									node_append(&temp_tree, newnode);
 									t_0x03_opened = true;
@@ -1259,7 +1259,7 @@ static int cmd_convertlogs(struct userrec *u, int idx, char *par) {
 		char *part;
 
 		part = newsplit(&par);
-		if (!egg_strncasecmp(part, "all", 3)) { // "all". Convert logs for all channels for all years.
+		if (!strncasecmp(part, "all", 3)) { // "all". Convert logs for all channels for all years.
 
 			while (p != NULL) {
 				for (i = start_year; i <= tblock.tm_year + 1900; i++) {

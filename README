@@ -1,4 +1,4 @@
-logs2html.mod v.2.5 by shmupsik aka shurikvz
+logs2html.mod v.2.6 by shmupsik aka shurikvz
 e-mail: shurikvz@mail.ru
 
 This module converts the log files of your eggdrop to the html format. It also creates a page-calendar with links to that created files.
@@ -24,9 +24,10 @@ Module has 4 commands, which you can use from dcc chat:
 
 
 *******************************************************************************
-You can try to find latest version on http://sourceforge.net/projects/logs2html or http://www.halftone.ru/projects
-
-pseudo's updates are available at http://eggdrop.egg6.net/modules/
+You can obtain the latest version from
+https://sourceforge.net/projects/logs2html/ and
+https://ftp.eggheads.org/pub/eggdrop/modules/ and
+https://github.com/michaelortmann/logs2html.mod
 *******************************************************************************
 
 

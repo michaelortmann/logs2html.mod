@@ -114,15 +114,15 @@ static void str_write(FILE *file, char *fstr, ... ) {
 	int size = 256;
 	static char *buffer = NULL;
 
-	buffer = (char *)nmalloc(size);
+	buffer = nmalloc(size);
 
 	while (true) {
 		va_start(ap, fstr);
-		nchars = egg_vsnprintf(buffer, size, fstr, ap);
+		nchars = vsnprintf(buffer, size, fstr, ap);
 		va_end(ap);
 		if (nchars < size) break;
 		size *= 2;
-		buffer = (char *)nrealloc(buffer, size);
+		buffer = nrealloc(buffer, size);
 	}
 
 	fwrite(buffer, sizeof(char), strlen(buffer), file);
